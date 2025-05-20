@@ -1,0 +1,41 @@
+.movie-detail-wrapper {
+  background-color: #000000;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.movie-poster {
+  width: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.movie-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  color: white;
+  background-color: black;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.movie-info-box {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 800px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.movie-info-box strong {
+  display: inline-block;
+  min-width: 60px;
+}
