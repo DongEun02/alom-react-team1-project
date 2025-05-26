@@ -4,5 +4,10 @@ div {
 }
 
 div > h1 {
+  color: inherit;
+}
+
+div > a {
+  text-decoration: none;
   color: red;
 }

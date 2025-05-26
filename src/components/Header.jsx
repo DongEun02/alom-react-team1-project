@@ -1,9 +1,12 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
-      <h1>Kimbab CINEMA</h1>
+      <Link to="/">
+        <h1>Kimbab CINEMA</h1>
+      </Link>
     </div>
   );
 };
