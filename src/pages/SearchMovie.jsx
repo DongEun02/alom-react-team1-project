@@ -1,8 +1,13 @@
+import styled from "styled-components";
 import { useState } from "react";
+import MovieItem from "./SearchMovieItem";
 
-const SearchedMovieData = ({ id }) => {
-  return <div></div>;
-};
+const PosterGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); // 한 행에 7개
+  gap: 16px;
+  padding: 20px;
+`;
 
 const SearchMovie = () => {
   const [query, setQuery] = useState("");
@@ -27,8 +32,9 @@ const SearchMovie = () => {
     );
     const search = await res.json();
     setSearchMovie(search.results);
-    console.log(searchMovie);
   }
+
+  console.log(searchMovie);
 
   return (
     <div>
@@ -36,11 +42,14 @@ const SearchMovie = () => {
         <input placeholder="검색어를 입력하세요..." onChange={onChangeSearch} />
         <button type="submit">검색</button>
       </form>
-      <div>
+      <PosterGrid>
         {searchMovie.map((movie) => (
-          <div>{movie.title}</div>
+          <MovieItem
+            key={movie.id}
+            posterImgUrl={movie.poster_path}
+          ></MovieItem>
         ))}
-      </div>
+      </PosterGrid>
     </div>
   );
 };
