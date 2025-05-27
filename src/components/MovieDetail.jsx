@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MovieDetail.css";
+import Header from "./Header";
+
 
 const MovieDetail = ({ movieId }) => {
   const [movie, setMovie] = useState(null);
@@ -28,6 +30,7 @@ const MovieDetail = ({ movieId }) => {
 
   return (
     <div className="movie-detail-wrapper">
+      <Header />
       <img
         className="movie-poster"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

@@ -1,5 +1,5 @@
 .movie-detail-wrapper {
-  background-color: #000000;
+  /*background-color: #000000;*/
   min-height: 100vh;
   padding: 40px 20px;
   box-sizing: border-box;
@@ -18,13 +18,11 @@
   font-size: 36px;
   font-weight: 900;
   color: white;
-  background-color: black;
   margin-top: 20px;
   padding: 10px 0;
 }
 
-.movie-info-box {
-  background-color: black;
+.movie-info-box { 
   color: white;
   padding: 20px;
   margin: 0 auto;
