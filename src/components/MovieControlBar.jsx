@@ -20,7 +20,7 @@ const MovieControlBar = ({ isToday, setIsToday }) => {
       <div className="search-rating">
         <span onClick={() => nav("/search")}>🔍 검색</span>
         <span>|</span>
-        <span onClick={() => nav("/rated")}>평점순 보기</span>
+        <span onClick={() => nav("/rating")}>평점순 보기</span>
       </div>
     </div>
   );
