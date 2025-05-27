@@ -34,7 +34,7 @@ const Home = () => {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Header />
       <MovieControlBar isToday={isToday} setIsToday={setIsToday} />
-      <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <MovieCard movie={topMovie} large={true} />
       </div>
       {rows.map((row, idx) => (

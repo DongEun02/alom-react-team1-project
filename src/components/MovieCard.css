@@ -1,6 +1,7 @@
 .movie-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
   padding: 12px;
 }

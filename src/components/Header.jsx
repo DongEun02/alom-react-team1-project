@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <Link to="/">
-        <h1>Kimbab CINEMA</h1>
+        <h1 className="header-title">Kimbab CINEMA</h1>
       </Link>
     </div>
   );

@@ -1,13 +1,13 @@
-div {
+.header {
   display: flex;
   justify-content: center;
 }
 
-div > h1 {
+.header-title {
   color: inherit;
 }
 
-div > a {
+.header > a {
   text-decoration: none;
   color: red;
 }
