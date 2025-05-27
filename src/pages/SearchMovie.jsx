@@ -52,6 +52,7 @@ const SearchMovie = () => {
   const navigate = useNavigate();
   const queryParam = searchParams.get("q") || "";
   const [searchMovie, setSearchMovie] = useState([]);
+  const ACCESS_TOKEN = import.meta.env.VITE_TMDB_ACCESS_TOKEN;
 
   useEffect(() => {
     async function searchData() {
@@ -59,8 +60,7 @@ const SearchMovie = () => {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOWJkNzQ4MWJiMzE0Mjg0OWMzYjY3MjYxYzU4NzIzOCIsIm5iZiI6MTc0NzcxOTQ0OS41MDEsInN1YiI6IjY4MmMxNTE5ZjZjZjIwNzZmM2UyNTExYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6oFSMOPSVI3bY8aHLin9MmLuM4wNHFPREt_eB5mwAy8",
+          Authorization: `Bearer ${ACCESS_TOKEN}`,
         },
       };
 
