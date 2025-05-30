@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import MovieCard from "../components/MovieCard";
 
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const Rating = () => {
@@ -31,7 +32,6 @@ const Rating = () => {
         textAlign: "center",
         backgroundColor: "black",
         color: "white",
-        padding: "30px",
       }}
     >
       <Header />
@@ -49,7 +49,7 @@ const Rating = () => {
       </div>
 
       {/* 나머지 영화들 */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns:"repeat(5,1fr)", gap: "20px",justifyItems:"center", }}>
         {others.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}

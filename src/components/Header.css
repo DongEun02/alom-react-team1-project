@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-title {
+  color: inherit;
+}
+
+.header > a {
+  text-decoration: none;
+  color: red;
+}
