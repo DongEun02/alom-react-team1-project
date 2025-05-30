@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Header from "../components/Header";
+import MovieCard from "../components/MovieCard";
 
-const API_KEY = "4cbc149868277003c1011b19515e855d";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const Rating = () => {
@@ -33,14 +34,7 @@ const Rating = () => {
         padding: "30px",
       }}
     >
-      <div style={{ textAlign: "center" }}>
-        <a
-          href="/"
-          style={{ color: "red", fontSize: "30px", fontWeight: "bold" }}
-        >
-          Kimbab CINEMA
-        </a>
-      </div>
+      <Header />
       <p>평점순으로 나열한 결과입니다.</p>
 
       {/* 제일 평점 높은 영화 */}
@@ -51,70 +45,13 @@ const Rating = () => {
           marginBottom: "40px",
         }}
       >
-        <div style={{position:"relative"}}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${topMovie.poster_path}`}
-            alt={topMovie.title}
-            style={{
-              width: "300px",
-              borderRadius: "10px",
-              display: "block",
-              // objectFit: "cover",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: "0",
-              left: "0",
-              backgroundColor: "yellow",
-              color: "black",
-              width: "60px",
-              display: "flex",
-              justifyContent:"center"
-            }}
-          >
-            ⭐ {topMovie.vote_average.toFixed(1)}
-          </div>
-        </div>
+        <MovieCard movie={topMovie} highlight />
       </div>
 
       {/* 나머지 영화들 */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
         {others.map((movie) => (
-          <div
-            key={movie.id}
-            style={{
-              width: "calc(20% - 20px)",
-              boxSizing: "border-box",
-              position: "relative",
-            }}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              style={{
-                width: "100%",
-                height: "280px",
-                // objectFit: "cover",
-                borderRadius: "5px",
-                display: "block",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: "0",
-                left: "0",
-                backgroundColor: "yellow",
-                color: "black",
-                width: "60px",
-                display: "flex",
-              }}
-            >
-              ⭐ {movie.vote_average.toFixed(1)}
-            </div>
-          </div>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
